@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wedding Rayya ❤️ Rizki</title>
+  <!-- web icon -->
+  <link rel="icon" href="assets/img/icon.png" />
+  <!-- bootstrap5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap" rel="stylesheet" />
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Lightbox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css"
+    integrity="sha512-xtV3HfYNbQXS/1R1jP53KbFcU9WXiSA1RFKzl5hRlJgdOJm4OxHCWYpskm6lN0xp0XtKGpAfVShpbvlFH3MDAA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- fontawesome icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- css -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Fix width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<body>
+  <!-- background music -->
+  <audio src="assets/audio/bgm.mp3" loop class="music"></audio>
+  <!-- sfx doorbell -->
+  <audio src="assets/audio/doorbell.mp3" class="doorbell"></audio>
+
+  <!-- Test Landing Section -->
+  <section id="landing-section" class="d-flex align-items-center">
+    <div class="container text-center">
+      <h3 class="my-2">Dear :</h3>
+      <h4><span id="nama-sambutan"></span></h4>
+      <h5 class="my-2 py-4">You are invited to</h5>
+      <h3 class="my-2 fw-bold">The Wedding of</h3>
+      <img class="pt-1 pb-4" src="assets/img/nama-pengantin.png" alt="nama-pengantin" />
+      <h4 class="my-4 fw-bold">14.12.2024</h4>
+
+      <!-- Button with onclick to play video -->
+      <a onclick="playEntranceVideo()" class="rounded-pill btn btn-coklat btn-lg btn-get-started py-3">
+        <i class="fa-regular fa-envelope-open"></i> Open Invitation
+      </a>
+
+      <!-- Video (hidden initially) -->
+      <video id="entranceVideo" src="assets/video/OpeningVid.mp4" style="display: none;"></video>
+    </div>
+  </section>
+
+
+  <!-- door section -->
+  <!-- <div id="door-section" class="open" onclick="mulai()">
+    <div class="doors">
+      <div class="door left">
+        <img src="assets/img/pintu-kiri.png" alt="left door" />
+      </div>
+      <div class="door right">
+        <img src="assets/img/pintu-kanan.png" alt="right door" />
+      </div>
+    </div>
+  </div> -->
+
+  <!-- content section -->
+  <div id="content-section">
+    <!-- navbar -->
+    <ul class="nav">
+      <span class="nav-music"></span>
+      <li>
+        <a href="#ilustrasi-section">
+          <i class="fas fa-fw fa-heart"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#acara-section">
+          <i class="fas fa-fw fa-calendar-day"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#location-section">
+          <i class="fas fa-fw fa-map"></i>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" class="nav-item-music rotate" id="music-button" onclick="toggleMusic(event)">
+          <i class="fas fa-fw fa-compact-disc"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#gallery-section">
+          <i class="fas fa-fw fa-image"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#gift-section">
+          <i class="fas fa-fw fa-gift"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#rsvp-section">
+          <i class="fas fa-fw fa-check-to-slot"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- hero section -->
+  <!-- <section id="hero-section" class="d-flex align-items-center">
+    <div class="container text-center">
+      <h3 class="my-2">Dear :</h3>
+      <h4><span id="nama-sambutan"></span></h4>
+      <h5 class="my-2 py-4">You are invited to</h5>
+      <h3 class="my-2 fw-bold">The Wedding of</h3>
+      <img class="pt-1 pb-4" src="assets/img/nama-pengantin.png" alt="nama-pengantin" />
+      <h4 class="my-4 fw-bold">14.12.2024</h4>
+      <a href="#pembuka-section" class="rounded-pill btn btn-lg btn-get-started py-3"><i
+          class="fa-regular fa-envelope-open"></i> Open Invitation</a>
+    </div>
+  </section> -->
+
+  <!-- pembuka section -->
+  <section id="pembuka-section" class="pembuka-section">
+    <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="row justify-content-center lamaran">
+        <img src="assets/img/lamar.png" alt="lamar" />
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-sm-8 my-2">
+          <div class="px-2 text-center">
+            <p>
+              Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia
+              menciptakan pasangan-pasangan untukmu dari (jenis) dirimu
+              sendiri agar kamu merasa tenteram kepadanya. Dia menjadikan di
+              antaramu rasa cinta dan kasih sayang. Sesungguhnya pada yang
+              demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah)
+              bagi kaum yang berpikir.
+            </p>
+            <p>Q.S Ar-Rum : 21</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ilustrasi section -->
+  <section id="ilustrasi-section" class="ilustrasi-section bgilustrasi">
+    <div class="image-container">
+      <img src="assets/img/pengantinbunga.png" alt="BungaPengantin" class="foreground" />
+    </div>
+    <div class="container" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="brideGroom my-5" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <h5 class="py-2 fw-bold" style="color: var(--coklat)">
+          The Wedding of
+        </h5>
+        <h1 class="justify-content-center huruf-sambung">Rayya</h1>
+        <h1 class="py-1 justify-content-center">
+          <span class="coklatdan">&</span>
+          <span class="huruf-sambung">Rizki</span>
+        </h1>
+      </div>
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <!-- Ilustrasi -->
+        <div class="row justify-content-center ilustrasicalon">
+          <img src="assets/img/pengantin.png" alt="lamar" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nama calon pengantin section -->
+  <section id="calon-pengantin-section" class="calon-pengantin-section py-5">
+    <div class="image-container">
+      <img src="assets/img/BrideGroomBunga.png" alt="Bride and Groom" class="foreground" />
+    </div>
+    <!-- Judulnya -->
+    <div class="brideGroom my-5" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <h1 class="justify-content-center huruf-sambung">Bride</h1>
+      <h1 class="py-1 justify-content-center">
+        <span class="coklatdan">&</span>
+        <span class="huruf-sambung">Groom</span>
+      </h1>
+    </div>
+
+    <div class="container">
+      <!-- calon -->
+      <div class="row my-3 justify-content-center">
+        <!-- Calon 1 -->
+        <div class="ticket-wrapper" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+          <div class="tiket-calon my-5 pt-3 text-center">
+            <div>
+              <h1 class="text-center huruf-sambung py-2">Rayya</h1>
+              <p class="nama lengkap">Sagita Ghaida Tsurayya</p>
+              <h6 class="nama-ortu">Putri dari Bapak Djoko Sulistyanto</h6>
+              <h6 class="nama-ortu">& Ibu Ani Mulyani</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calon2 -->
+        <div class="ticket-wrapper" class="ticket-wrapper" data-aos="fade-left" data-aos-easing="linear"
+          data-aos-duration="1500">
+          <div class="tiket-calon my-2 pt-3 text-center">
+            <div>
+              <h1 class="text-center huruf-sambung py-2">Rizki</h1>
+              <p class="nama lengkap">Rizki Nuranfalah</p>
+              <h6 class="nama-ortu">Putra dari Bapak Andri Kunarso</h6>
+              <h6 class="nama-ortu">& Ibu Nenny Suryawati</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- acara & lokasi section -->
+  <section id="acara-section" class="acara-section py-5">
+    <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="row justify-content-center">
+        <div class="w-100">
+          <div class="section-title text-center">
+            <h1 class="huruf-sambung">Save the</h1>
+            <h1 class="huruf-sambung">Wedding Date</h1>
+          </div>
+
+          <!-- Countdown -->
+          <div class="row my-2 d-flex justify-content-center countdown" id="countdown-wedding">
+            <div class="w-auto">
+              <div class="text-center p-2 rounded">
+                <h5>0</h5>
+                Days
+              </div>
+            </div>
+            <div class="w-auto">
+              <div class="text-center p-2 rounded">
+                <h5>0</h5>
+                Hours
+              </div>
+            </div>
+            <div class="w-auto">
+              <div class="text-center p-2 rounded">
+                <h5>0</h5>
+                Minutes
+              </div>
+            </div>
+            <div class="w-auto">
+              <div class="text-center p-2 rounded">
+                <h5>0</h5>
+                Seconds
+              </div>
+            </div>
+          </div>
+          <!-- Acara Nikah -->
+          <div class="row justify-content-between px-3 text-center">
+            <!-- Akad -->
+            <div class="w-100 my-2 rounded p-3 card-acara" data-aos="fade-right" data-aos-easing="linear"
+              data-aos-duration="1500">
+              <h4><b>14.12.2024</b></h4>
+              <p>
+                <i class="fas fa-fw fa-location-dot"></i> Rumah Turki, Jakarta Escape
+              </p>
+            </div>
+
+
+            <!-- Tombol tambah Ke kalender -->
+            <div class="row justify-content-between px-3 text-center">
+              <div class="w-100 my-2 rounded p-3 card-acara" data-aos="fade-left" data-aos-easing="linear"
+                data-aos-duration="1500">
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&dates=20241010T033000Z%2F20241010T050000Z"
+                  class="btn btn-lg btn-coklat rounded-pill" target="_blank">
+                  <i class="fas fa-fw fa-calendar-day"></i> Add to Callendar
+                </a>
+              </div>
+            </div>
+
+            <hr class="separator" />
+            <!-- Lokasi Nikah -->
+            <div id="location-section" class="location">
+              <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
+                  <!-- Gmaps -->
+                  <iframe class="mb-5 mb-lg-0 border-coklat"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4715.817199727885!2d106.9169355297569!3d-6.327403090548558!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699327f0e736af%3A0xa164493e1b40357f!2sRumah%20Perubahan%20Jakarta%20Escape!5e0!3m2!1sen!2sid!4v1730125336480!5m2!1sen!2sid"
+                    width="100%" height="200" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  <a href="https://maps.app.goo.gl/7NAzoE3V3qKaN9Rx5" target="_blank"
+                    class="btn btn-lg btn-coklat rounded-pill mb-4"><i class="fas fa-fw fa-location-dot"></i> Buka di
+                    Google
+                    Maps</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- galeri -->
+  <section id="gallery-section" class="gallery-section py-5 section-bg">
+    <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <div class="section-title my-3">
+            <h1 class="py-4 text-pink huruf-sambung fw-bold">Our Moments</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" data-masonry='{"percentPosition": true }'>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-1.png" data-lightbox="rayyaRizki" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-1.png" alt="Rayya & Rizki 1" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-2.png" data-lightbox="rayyaRizki" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-2.png" alt="Rayya & Rizki 2" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-3.png" data-lightbox="rayyaRizki" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-3.png" alt="Rayya & Rizki 3" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-4.png" data-lightbox="rayyaRizki" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-4.png" alt="Rayya & Rizki 4" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-5.png" data-lightbox="rayyaRizki" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-5.png" alt="Rayya & Rizki 5" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-6.png" data-lightbox="rayyaRizki" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-6.png" alt="Rayya & Rizki 6" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-7.png" data-lightbox="rayyaRizki" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-7.png" alt="Rayya & Rizki 7" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-8.png" data-lightbox="rayyaRizki" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-8.png" alt="Rayya & Rizki 8" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-1.png" data-lightbox="rayyaRizki" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-1.png" alt="Rayya & Rizki 1" class="card-img border-coklat" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Gift Section -->
+  <section id="gift-section" class="gift-section py-5 section-bg">
+
+    <!-- Foreground container for the image -->
+    <div class="foreground-container">
+      <img src="assets/img/giftbunga.png" alt="bungagift" class="depan" />
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="row justify-content-center py-3">
+        <div class="col-md-8 col-10 text-center">
+          <div class="section-title">
+            <h1 class="text-pink huruf-sambung">Wedding Gift</h1>
+            <p class="col-8" style="color: var(--coklat);">
+              For those who would like to offer a token of appreciation, you may send it through the feature below.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-between px-3 text-center">
+        <div class="w-100 my-2 rounded p-3 card-acara" data-aos="fade-left" data-aos-easing="linear"
+          data-aos-duration="1500">
+          <a href="#bank-section" class="btn btn-lg btn-coklat rounded-pill" target="_blank" style="margin-left: 0;">
+            Send Gift
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- Bank -->
+  <section id="bank-section" class="bank-section py-5">
+    <div class="ticket-bank" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="tiket-bank my-5 pt-3 text-center">
+        <div>
+          <h3 class="nama-bank fw-bold">BCA</h3>
+          <h4 class="nomor-rekening">1234567<i class="fas fa-fw fa-copy"></i></h4>
+          <h4 class="atas-nama">Sagita Ghaida Tsurayya</h4>
+
+        </div>
+      </div>
+    </div>
+    <div class="ticket-bank" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="tiket-bank my-5 pt-3 text-center">
+        <div>
+          <h3 class="nama-bank fw-bold">Mandiri</h3>
+          <h4 class="nomor-rekening">1234567<i class="fas fa-fw fa-copy"></i></h4>
+          <h4 class="atas-nama">Rizki Nuranfalah</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center text-left peringatan">
+      <div class="col-8">
+        <p>
+          ⓘ ATTENTION!
+        </p>
+        <p>
+          *Pastikan nama dan nomor rekening sudah sesuai dengan nama mempelai ketika melakukan proses transfer.
+        </p>
+        <p>
+          * Mohon untuk melakukan konfirmasi hadiah anda dengan mengirim bukti transfer/ resi pengiriman kepada mempelai
+          melalui personal message. Terima kasih.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp-section" class="rsvp-section py-5">
+    <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <div class="section-title">
+            <h1 class="text-pink huruf-sambung">RSVP</h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form class="row row-cols-lg-auto g-3 align-items-top" id="my-form" method="POST"
+        action="https://script.google.com/macros/s/AKfycbwbOl93WMh_GVGaplstUl3xWnx9A-JnkzMNfcUQ5r9h9Yclv4aUuZ5hUnQLzHBTM42KOw/exec">
+        <!-- Nama -->
+        <div class="col-12 text-center">
+          <div class="my-3">
+            <label for="nama" class="form-label">Name</label>
+            <input type="text" class="form-control" id="nama" name="Nama" />
+          </div>
+        </div>
+        <!-- Ucapan -->
+        <div class="col-12 text-center">
+          <div class="mb-3">
+            <label for="ucapan" class="form-label">Ucapan & Doa Restu</label>
+            <textarea class="form-control ucapan-textarea" id="ucapan" name="Ucapan" rows="2"></textarea>
+          </div>
+        </div>
+
+        <!-- Konfirmasi Kehadiran -->
+        <div class="col-12 text-center">
+          <div class="mb-3">
+            <label for="status" class="form-label">Konfirmasi Kehadiran</label>
+            <select name="Status" id="status" class="form-select">
+              <option selected>Pilih</option>
+              <option value="Hadir">Hadir</option>
+              <option value="Tidak Hadir">Tidak Hadir</option>
+            </select>
+          </div>
+        </div>
+        <!-- tombol send -->
+        <div class="col-12" style="margin-top: 20px; text-align: right;">
+          <button class="btn btn-lg btn-coklat rounded-pill" type="submit">
+            <i class="fas fa-fw fa-paper-plane"></i>Kirim
+          </button>
+        </div>
+      </form>
+
+      <!-- hapus/nyalain kalau mau hapus komen -->
+      <!-- <div class="row justify-content-center mt-5">
+          <button onclick="clearComments()">Clear Comments</button>
+        </div> -->
+
+      <!-- Comments Section -->
+      <div class="row justify-content-center mt-5"></div>
+      <div id="commentsSection" class="col-md-6">
+        <h3 class="text-center">Ucapan dari tamu</h3>
+        <!-- Comments will be appended here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- terimakasih section -->
+  <section id="terimakasih-section" class="terimakasih-section section-bg">
+    <div class="image-container">
+      <img src="assets/img/terimakasihBunga.png" alt="BungaPengantin" class="bungaterimakasih" />
+    </div>
+
+    <div class="ucapan-terimakasih">
+      <img src="assets/img/textBG.png" alt="orchid" class="background-text">
+      <div class="ucapan" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="row justify-content-center">
+          <div class="col-9 my-2">
+            <div class="px-2 text-center fw-bold" style="color: var(--coklat);">
+              <p>
+                Suatu kehormatan dan kebahagiaan bagi kami bila Bapak/Ibu/Saudara/i berkenan hadir dan memberi doa restu
+                bagi putra-putri kami.
+              </p>
+              <p>Wassalamu'alaikum Warrahmatullahi Wabarakatuh</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- penutup section -->
+  <section id="penutup-section" class="penutup-section">
+
+    <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="row justify-content-center">
+        <div class="col-sm-8">
+          <div class="text-center">
+            <p>dari kami</p>
+            <p>yang berbahagia</p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center logo-penutup">
+        <img src="assets/img/thanks logo.png" alt="tutup" />
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-sm-8 my-2">
+          <div class="px-2 text-center">
+            <h4><span class="huruf-sambung">Rayya</span> <span style="color: var(--coklat);">&</span> <span
+                class="huruf-sambung">Rizki</span></h4>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <small class="'block">&copy; 2024 Nagaishi_Fuu. All Rights Reserved.</small>
+          <small class="'block">Design by
+            <a href="https://www.instagram.com/nagaishi_fuu" target="_blank">
+              @nagaishi_fuu</a> X <a href="https://www.instagram.com/pididoo/" target="_blank">
+              @pididoo</a></small>
+        </div>
+        <a href="#hero-section" class="back-to-top">
+          <i class="fas fa-arrow-up"></i> Back to Top
+        </a>
+      </div>
+    </div>
+    <div style="height: 90px"></div>
+  </footer>
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!-- bootstrap5 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- lightbox -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"
+    integrity="sha512-KbRFbjA5bwNan6DvPl1ODUolvTTZ/vckssnFhka5cG80JVa5zSlRPCr055xSgU/q6oMIGhZWLhcbgIC0fyw3RQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- sweetalert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.3/dist/sweetalert2.all.min.js"></script>
+  <!-- masonry -->
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+    async></script>
+  <!-- javascript -->
+  <script src="assets/js/script.js"></script>
+</body>
+
+</html>
