@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wedding Rahma ❤️ Ryan</title>
+  <!-- web icon -->
+  <link rel="icon" href="assets/img/icon.png" />
+  <!-- bootstrap5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Lightbox -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/css/lightbox.min.css"
+    integrity="sha512-xtV3HfYNbQXS/1R1jP53KbFcU9WXiSA1RFKzl5hRlJgdOJm4OxHCWYpskm6lN0xp0XtKGpAfVShpbvlFH3MDAA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- fontawesome icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- css -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Fix width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+
+<body>
+  <!-- background music -->
+  <audio src="assets/audio/bgm.mp3" loop muted class="music"></audio>
+  <!-- sfx doorbell -->
+  <audio src="assets/audio/doorbell.mp3" class="doorbell"></audio>
+
+  <!-- Test Landing Section -->
+  <section id="landing-section" class="d-flex align-items-center">
+    <div class="container text-center">
+      <h3 class="my-2">Dear :</h3>
+      <h4><span id="nama-sambutan"></span></h4>
+      <h5 class="my-2 py-4">You are invited to</h5>
+      <h3 class="my-2 fw-bold">The Wedding of</h3>
+      <img class="pt-1 pb-4" src="assets/img/nama-pengantin.png" alt="nama-pengantin" />
+      <h4 class="my-4 fw-bold">14.12.2024</h4>
+
+      <!-- Button with onclick to play video -->
+      <a onclick="playEntranceVideo()" class="rounded-pill btn btn-coklat btn-lg btn-get-started py-3">
+        <i class="fa-regular fa-envelope-open"></i> Open Invitation
+      </a>
+
+      <!-- Video (hidden initially) -->
+      <video id="entranceVideo" src="assets/video/OpeningVid.mp4" style="display: none;"></video>
+    </div>
+  </section>
+
+
+  <!-- content section -->
+  <div id="content-section">
+    <!-- navbar -->
+    <ul class="nav">
+      <span class="nav-music"></span>
+      <li>
+        <a href="#ilustrasi-section">
+          <i class="fas fa-fw fa-heart"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#acara-section">
+          <i class="fas fa-fw fa-calendar-day"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#location-section">
+          <i class="fas fa-fw fa-map"></i>
+        </a>
+      </li>
+
+      <li>
+        <a href="#" class="nav-item-music rotate" id="music-button" onclick="toggleMusic(event)">
+          <i class="fas fa-fw fa-compact-disc"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#gallery-section">
+          <i class="fas fa-fw fa-image"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#gift-section">
+          <i class="fas fa-fw fa-gift"></i>
+        </a>
+      </li>
+      <li>
+        <a href="#rsvp-section">
+          <i class="fas fa-fw fa-check-to-slot"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- pembuka section -->
+  <section id="pembuka-section" class="pembuka-section">
+  </section>
+
+  <!-- ilustrasi section -->
+  <section id="ilustrasi-section" class="ilustrasi-section bgilustrasi">
+    <div class="image-container">
+      <img src="assets/img/pengantinbunga.png" alt="BungaPengantin" class="foreground" />
+    </div>
+    <div class="container" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="brideGroom my-4" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <p class="py-2" style="color: var(--coklat)">
+          The Wedding of
+        </p>
+        <h1 class="justify-content-center huruf-sambung">Rahma</h1>
+        <h1 class="py-1 justify-content-center">
+          <span class="coklatdan">&</span>
+          <span class="huruf-sambung">Ryan</span>
+        </h1>
+      </div>
+
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <!-- Ilustrasi -->
+        <div class="row justify-content-center ilustrasicalon">
+          <img src="assets/img/pengantin.png" alt="lamar" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nama calon pengantin section -->
+  <section id="calon-pengantin-section" class="calon-pengantin-section py-5">
+    <div class="bunga-container">
+      <img src="assets/img/BGbungakiri.png" alt="Bride and Groom" class="bunga-kiri" data-aos="fade-right"
+        data-aos-easing="linear" data-aos-duration="2000" />
+      <img src="assets/img/BGbungakanan.png" alt="Bride and Groom" class="bunga-kanan" data-aos="fade-left"
+        data-aos-easing="linear" data-aos-duration="2000" />
+    </div>
+    <!-- Judulnya -->
+    <div class="brideGroom my-5" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <h1 class="justify-content-center huruf-sambung">Bride</h1>
+      <h1 class="py-1 justify-content-center">
+        <span class="coklatdan">&</span>
+        <span class="huruf-sambung">Groom</span>
+      </h1>
+    </div>
+
+    <div class="container">
+      <!-- calon -->
+      <div class="row my-3 justify-content-center">
+        <!-- Calon 1 -->
+        <div class="ticket-wrapper" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+          <div class="tiket-calon my-5 pt-3 text-center">
+            <div>
+              <h2 class="text-center huruf-sambung py-2">Rahma</h2>
+              <p class="nama lengkap">Rahma Amalia Putri</p>
+              <h6 class="nama-ortu">Putri dari Bapak Hadi Santoso</h6>
+              <h6 class="nama-ortu">& Ibu Sri Wahyuni</h6>
+            </div>
+          </div>
+        </div>
+
+        <!-- Calon2 -->
+        <div class="ticket-wrapper" class="ticket-wrapper" data-aos="fade-down" data-aos-easing="linear"
+          data-aos-duration="1500">
+          <div class="tiket-calon my-2 pt-3 text-center">
+            <div>
+              <h2 class="text-center huruf-sambung py-2">Ryan</h2>
+              <p class="nama lengkap">Ryan Aditya Pratama</p>
+              <h6 class="nama-ortu">Putra dari Bapak Dedi Kurniawan</h6>
+              <h6 class="nama-ortu">& Ibu Lestari Wijayanti</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- acara & lokasi section -->
+  <section id="acara-section" class="acara-section py-5">
+    <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="row justify-content-center">
+        <div class="w-100">
+          <div class="section-title text-center">
+            <h1 class="huruf-sambung">Save the</h1>
+            <h1 class="huruf-sambung">Wedding Date</h1>
+          </div>
+
+          <!-- Countdown -->
+          <div class="row my-2 d-flex justify-content-center countdown" id="countdown-wedding">
+            <div class="w-auto">
+              <div class="text-center p-2 rounded">
+                <h5>0</h5>
+                Days
+              </div>
+            </div>
+            <div class="w-auto">
+              <div class="text-center p-2 rounded">
+                <h5>0</h5>
+                Hours
+              </div>
+            </div>
+            <div class="w-auto">
+              <div class="text-center p-2 rounded">
+                <h5>0</h5>
+                Minutes
+              </div>
+            </div>
+            <div class="w-auto">
+              <div class="text-center p-2 rounded">
+                <h5>0</h5>
+                Seconds
+              </div>
+            </div>
+          </div>
+          <!-- Acara Nikah -->
+          <div class="row justify-content-between px-3 text-center">
+            <!-- Akad -->
+            <div class="w-100 my-2 rounded p-3 card-acara" data-aos="fade-right" data-aos-easing="linear"
+              data-aos-duration="1500">
+              <h4><b>15.12.2024</b></h4>
+              <p>
+                <i class="fas fa-fw fa-location-dot"></i> Layana Hall, Kiara Artha Park
+              </p>
+            </div>
+
+
+            <!-- Tombol tambah Ke kalender -->
+            <div class="row justify-content-between px-3 text-center">
+              <div class="w-100 my-2 rounded p-3" data-aos="fade-left" data-aos-easing="linear"
+                data-aos-duration="1500">
+                <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Rahma+%E2%9D%A4+Ryan+Wedding&location=Layana+Hall%2C+Kiara+Artha+Park&dates=20241215T033000Z%2F20241215T083000Z"
+                  class="btn btn-lg btn-coklat rounded-pill" target="_blank">
+                  <i class="fas fa-fw fa-calendar-day"></i> Add to Callendar
+                </a>
+              </div>
+            </div>
+
+            <hr class="separator" />
+            <!-- Lokasi Nikah -->
+            <div id="location-section" class="location">
+              <div class="row justify-content-center">
+                <div class="col-lg-12 text-center">
+                  <!-- Gmaps -->
+                  <iframe class="mb-5 mb-lg-0 border-coklat"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1514.3820066601586!2d107.64192690247805!3d-6.916377193944807!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7001dfc2ee1%3A0xb54627f1f7a49b60!2sLayana%20Hall!5e0!3m2!1sen!2sid!4v1732433696606!5m2!1sen!2sid"
+                    width="100%" height="200" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                  <a href="https://maps.app.goo.gl/7NAzoE3V3qKaN9Rx5" target="_blank"
+                    class="btn btn-lg btn-coklat rounded-pill mb-4"><i class="fas fa-fw fa-location-dot"></i> Buka di
+                    Google
+                    Maps</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- galeri -->
+  <section id="gallery-section" class="gallery-section py-5 section-bg">
+    <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <div class="section-title my-3">
+            <h1 class="py-4 text-pink huruf-sambung fw-bold">Our Moments</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" data-masonry='{"percentPosition": true }'>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-1.jpg" data-lightbox="rahmaRyan" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-1.jpg" alt="Rahma & Ryan 1" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-2.jpg" data-lightbox="rahmaRyan" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-2.jpg" alt="Rahma & Ryan 2" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-3.jpg" data-lightbox="rahmaRyan" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-3.jpg" alt="Rahma & Ryan 3" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-4.jpg" data-lightbox="rahmaRyan" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-4.jpg" alt="Rahma & Ryan 4" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-5.jpg" data-lightbox="rahmaRyan" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-5.jpg" alt="Rahma & Ryan 5" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-6.jpg" data-lightbox="rahmaRyan" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-6.jpg" alt="Rahma & Ryan 6" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-7.jpg" data-lightbox="rahmaRyan" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-7.jpg" alt="Rahma & Ryan 6" class="card-img border-coklat" />
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 mb-4">
+          <a href="assets/img/galeri/galeri-8.jpg" data-lightbox="rahmaRyan" class="text-decoration-none">
+            <img src="assets/img/galeri/thumbnail/galeri-8.jpg" alt="Rahma & Ryan 6" class="card-img border-coklat" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Gift Section -->
+  <section id="gift-section" class="gift-section py-5 section-bg">
+
+    <!-- Foreground container for the image -->
+    <div class="foreground-container">
+      <img src="assets/img/giftbunga.png" alt="bungagift" class="depan" />
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="row justify-content-center py-3">
+        <div class="col-md-8 col-10 text-center">
+          <div class="section-title">
+            <h1 class="text-pink huruf-sambung">Wedding Gift</h1>
+            <p class="col-8" style="color: var(--coklat);">
+              Bagi yang ingin memberikan tanda kasih, dapat mengirimkan melalui rekening di bawah ini:
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bank -->
+  <section id="bank-section" class="bank-section py-5">
+    <div class="ticket-bank" data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="tiket-bank my-5 pt-3 text-center">
+        <div>
+          <h3 class="nama-bank fw-bold">Mandiri</h3>
+          <h4 id="nomor-rekening">1234567890 <i class="fas fa-fw fa-copy" onclick="copyToClipboard()"></i></h4>
+          <h4 class="atas-nama">Rahma Amalia Putri</h4>
+        </div>
+      </div>
+    </div>
+    <div class="ticket-bank" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="tiket-bank my-5 pt-3 text-center">
+        <div>
+          <h3 class="nama-bank fw-bold">BCA</h3>
+          <h4 id="nomor-rekening">0987654321 <i class="fas fa-fw fa-copy" onclick="copyToClipboard()"></i></h4>
+          <h4 class="atas-nama">Ryan Aditya Pratama</h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center text-left peringatan">
+      <div class="col-8">
+        <p>
+          ⓘ ATTENTION!
+        </p>
+        <p>
+          *Pastikan nama dan nomor rekening sudah sesuai dengan nama mempelai ketika melakukan proses transfer.
+        </p>
+        <p>
+          *Mohon untuk melakukan konfirmasi hadiah anda dengan mengirim bukti transfer/ resi pengiriman kepada mempelai
+          melalui personal message. Terima kasih.
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- RSVP -->
+  <section id="rsvp-section" class="rsvp-section py-5">
+    <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <div class="section-title">
+            <h1 class="py-1 justify-content-center">
+              <span class="huruf-sambung">Ucapan</span>
+              <span style="color: var(--coklat);">&</span>
+              <span class="huruf-sambung">Doa</span>
+            </h1>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <form class="row row-cols-lg-auto g-3 align-items-top" id="my-form" method="POST"
+        action="https://script.google.com/macros/s/AKfycbwC-5Lepltc8E9pkZx6nzjn7y2yzpavYmFV0gMxGZgsU8_WBgI8ldS2lZH5x7_8v3uB/exec">
+        <!-- Nama -->
+        <div class="col-12 text-center">
+          <div class="my-3">
+            <label for="nama" class="form-label">Nama</label>
+            <input type="text" class="form-control" id="nama" name="Nama" />
+          </div>
+        </div>
+        <!-- Ucapan -->
+        <div class="col-12 text-center">
+          <div class="mb-3">
+            <label for="ucapan" class="form-label">Ucapan & Doa Restu</label>
+            <textarea class="form-control ucapan-textarea" id="ucapan" name="Ucapan" rows="2"></textarea>
+          </div>
+        </div>
+
+        <!-- Konfirmasi Kehadiran -->
+        <div class="col-12 text-center">
+          <div class="mb-3">
+            <label for="status" class="form-label">Konfirmasi Kehadiran</label>
+            <select name="Status" id="status" class="form-select">
+              <option selected>Pilih</option>
+              <option value="Hadir">Hadir</option>
+              <option value="Tidak Hadir">Tidak Hadir</option>
+            </select>
+          </div>
+        </div>
+        <!-- tombol send -->
+        <div class="col-12" style="margin-top: 20px; text-align: right;">
+          <button class="btn btn-lg btn-coklat rounded-pill" type="submit">
+            <i class="fas fa-fw fa-paper-plane"></i>Kirim
+          </button>
+        </div>
+      </form>
+
+      <!-- nyalain kalau mau hapus komen -->
+      <!-- <div class="row justify-content-center mt-5">
+          <button onclick="clearComments()">Clear Comments</button>
+        </div> -->
+
+      <!-- Comments Section -->
+      <div class="row justify-content-center mt-5">
+        <h3 class="text-center">Ucapan dari tamu</h3>
+        <div id="commentsSection" class="col-md-6">
+          <!-- Comments will be appended here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- terimakasih section -->
+  <section id="terimakasih-section" class="terimakasih-section section-bg">
+    <div class="image-container">
+      <img src="assets/img/terimakasihBunga.png" alt="BungaPengantin" class="bungaterimakasih" />
+    </div>
+
+    <div class="ucapan-terimakasih">
+      <img src="assets/img/textBG.png" alt="orchid" class="background-text">
+      <div class="ucapan" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+        <div class="row justify-content-center">
+          <div class="col-9 my-2">
+            <div class="px-2 text-center" style="color: var(--coklat);">
+              <p>
+                Suatu kehormatan dan kebahagiaan bagi kami bila Bapak/Ibu/Saudara/i berkenan hadir dan
+                memberi doa restu
+                bagi putra-putri kami.
+              </p>
+              <p>Wassalamu'alaikum<br>Warrahmatullahi Wabarakatuh</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- penutup section -->
+  <section id="penutup-section" class="penutup-section">
+
+    <div class="container" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500">
+      <div class="row justify-content-center">
+        <div class="col-sm-8">
+          <div class="text-center">
+            <p>dari kami</p>
+            <p>yang berbahagia</p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center logo-penutup">
+        <img src="assets/img/thanks logo.png" alt="tutup" />
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-sm-8 my-2">
+          <div class="px-2 text-center">
+            <h4><span class="huruf-sambung">Rahma</span> <span style="color: var(--coklat);">&</span> <span
+                class="huruf-sambung">Ryan</span></h4>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" class="footer py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <small class="'block">&copy; 2024 Nagaishi_Fuu. All Rights Reserved.</small>
+          <small class="'block">Design by
+            <a href="https://www.instagram.com/nagaishi_fuu" target="_blank">
+              @nagaishi_fuu</a> X <a href="https://www.instagram.com/pididoo/" target="_blank">
+              @pididoo</a></small>
+        </div>
+        <a href="#landing-section" class="back-to-top">
+          <i class="fas fa-arrow-up"></i> Back to Top
+        </a>
+      </div>
+    </div>
+    <div style="height: 90px"></div>
+  </footer>
+
+  <!-- jQuery (Deferred) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
+
+  <!-- Bootstrap5 (Deferred) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
+    defer></script>
+
+  <!-- AOS (Deferred) -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+
+  <!-- Lightbox (Deferred) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.5/js/lightbox.min.js"
+    integrity="sha512-KbRFbjA5bwNan6DvPl1ODUolvTTZ/vckssnFhka5cG80JVa5zSlRPCr055xSgU/q6oMIGhZWLhcbgIC0fyw3RQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
+
+  <!-- SweetAlert2 (Deferred) -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.3/dist/sweetalert2.all.min.js" defer></script>
+
+  <!-- Masonry (Async) -->
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
+    async></script>
+
+  <!-- Your Custom Script (Deferred) -->
+  <script src="assets/js/script.js" defer></script>
+
+</html>
